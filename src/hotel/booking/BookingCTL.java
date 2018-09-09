@@ -137,7 +137,27 @@ public class BookingCTL {
 
 
 	public void creditDetailsEntered(CreditCardType type, int number, int ccv) {
-		// TODO Auto-generated method stub
+		if (state != State.CREDIT) {   // State should be CREDIT
+			String mesg = String.format("BookingCTL: creditDetailsEntered : bad state : %s", state);
+			throw new RuntimeException(mesg); // throws exception 
+		}
+
+       CreditCard card = new CreditCard(type, number, ccv); // creating a new credit card
+       cost = selectedRoomType.calculateCost(arrivalDate, stayLength); // calculating cost
+       boolean approved = CreditAuthorizer.authorize(card, cost); // approving card 
+       
+       if(!approved) { // if card is not approved
+            String notApprovedMessage = "\nCredit card not approved, please try again\n"; 
+			bookingUI.displayMessage(notApprovedMessage ); // display above error message
+       }
+       else {
+              hotel.book(room, guest, arrivalDate, stayLength, occupantNumber, card); // calling book method of hotel class to book the room
+              String description = selectedRoomType.getDescription();  // getting description of room
+              bookingUI.displayConfirmedBooking(description, room.getId(), arrivalDate,  stayLength, 
+                        guest.getName(), card.getVendor(), number, cost, Booking.getConfirmationNumber); // displaying confirmation message
+              state = State.COMPLETED; // state set to completed 
+              bookingUI.setState(BookingUI.State.COMPLETED); // UI state set to completed 
+       }  
 	}
 
 
