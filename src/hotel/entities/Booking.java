@@ -144,7 +144,13 @@ public class Booking {
 
 
 	public void addServiceCharge(ServiceType serviceType, double cost) {
-		// TODO Auto-generated method stub
+		 if(state != State.CHECKED_IN) { // state should be checked in
+		    String msg = "Person should have checked in";
+			throw new RuntimeException(msg);
+		)
+		
+		ServiceCharge charges = new ServiceCharge(serviceType, cost); // creates new service charge
+		this.getCharges().add(charges); // add service charge in the charges list
 	}
 
 
