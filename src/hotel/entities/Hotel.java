@@ -109,8 +109,23 @@ public class Hotel {
 	    activeBookingsByRoomId.put(Integer.valueOf(roomId), booking);
 	}
 
+public void addServiceCharge(int roomId, ServiceType serviceType, double cost) {
+		// TODO Auto-generated method stub
+		Booking booking = (Booking)activeBookingsByRoomId.get(Integer.valueOf(roomId));
+	    if (booking == null) {
+	String message = "Hotel: addServiceCharge: no booking present for given room id  ";
+	      throw new RuntimeException(message);
+	      
+	    }
+	    booking.addServiceCharge(serviceType, cost);
+	  }
+	
 
 	
+	public void checkout(int roomId) {
+		// TODO Auto-generated method stub
+		
+}	
 
 	
 }
