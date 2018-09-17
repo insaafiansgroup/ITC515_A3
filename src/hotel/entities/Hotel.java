@@ -95,5 +95,22 @@ public class Hotel {
 			
 	}
 
+
+	public void checkin(long confirmationNumber) {
+		// TODO Auto-generated method stub
+		Booking booking = (Booking) bookingsByConfirmationNumber.get(confirmationNumber);
+	    if (booking == null) {
+	      String message = "Hotel: checkin: No booking found for given confirmation number ";
+	      throw new RuntimeException(message);
+	    }
+	    int roomId = booking.getRoomId();
+	    
+	    booking.checkIn();
+	    activeBookingsByRoomId.put(Integer.valueOf(roomId), booking);
+	}
+
+
+	
+
 	
 }
