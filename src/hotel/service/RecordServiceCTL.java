@@ -50,6 +50,18 @@ public class RecordServiceCTL {
 	
 	public void serviceDetailsEntered(ServiceType serviceType, double cost) {
 		// TODO Auto-generated method stub
+		if (state != State.SERVICE) // if condition check the service state
+			{ 
+			//if service is not set than it will show message to the user
+		      String msg = "PayForServiceCTL: serviceDetailsEntered : bad state";
+		      throw new RuntimeException(msg); // throw runtime error
+		    }
+		    hotel.addServiceCharge(roomNumber, serviceType, cost); // calling addServiceCharge method of hotel class with parameters
+		    
+		    recordServiceUI.displayServiceChargeMessage(roomNumber, cost, serviceType.getDescription()); //  it will provide description of room service
+		    state = State.COMPLETED; // set the state to completed
+		    recordServiceUI.setState(RecordServiceUI.State.COMPLETED); // call setState method of recordServiceUI class
+
 	}
 
 
