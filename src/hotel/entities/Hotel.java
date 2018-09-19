@@ -106,12 +106,12 @@ public class Hotel {
 	    int roomId = booking.getRoomId();
 	    
 	    booking.checkIn();
-	    activeBookingsByRoomId.put(Integer.valueOf(roomId), booking);
+	    activeBookingsByRoomId.put(roomId, booking);
 	}
 
 public void addServiceCharge(int roomId, ServiceType serviceType, double cost) {
 		// TODO Auto-generated method stub
-		Booking booking = (Booking)activeBookingsByRoomId.get(Integer.valueOf(roomId));
+		Booking booking = (Booking)activeBookingsByRoomId.get(roomId);
 	    if (booking == null) {
 	String message = "Hotel: addServiceCharge: no booking present for given room id  ";
 	      throw new RuntimeException(message);
@@ -124,7 +124,7 @@ public void addServiceCharge(int roomId, ServiceType serviceType, double cost) {
 	
 	public void checkout(int roomId) {
 		// TODO Auto-generated method stub
-		Booking booking = (Booking)activeBookingsByRoomId.get(Integer.valueOf(roomId));
+		Booking booking = (Booking)activeBookingsByRoomId.get(roomId);
 	    if (booking == null) {
 
 	      
@@ -132,7 +132,7 @@ public void addServiceCharge(int roomId, ServiceType serviceType, double cost) {
 	      throw new RuntimeException(message);
 	    }
 	    booking.checkOut();
-	    activeBookingsByRoomId.remove(Integer.valueOf(roomId));
+	    activeBookingsByRoomId.remove(roomId);
 
 		
 }	
