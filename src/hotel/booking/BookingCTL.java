@@ -20,7 +20,7 @@ public class BookingCTL {
 	
 	private BookingUI bookingUI;
 	private Hotel hotel;
-
+    private Booking booking;
 	private Guest guest;
 	private Room room;
 	private double cost;
