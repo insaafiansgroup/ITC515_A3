@@ -78,7 +78,13 @@ public class BookingTest {
      */
     @Test
     public void testCheckOut() {
-        
+        System.out.println("checkOut");
+        Booking booking = new Booking(new Guest("Waqas Akbar", "2A Tucker St", 042054),
+                          new Room(101, RoomType.SINGLE), new Date(), 1, 1,
+                          new CreditCard(CreditCardType.VISA, 5467433, 245));
+        booking.checkIn();
+        booking.checkOut();
+        assertEquals(true, booking.isCheckedOut());
     }
     
 	
