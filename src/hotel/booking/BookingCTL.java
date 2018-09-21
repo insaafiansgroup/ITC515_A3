@@ -151,10 +151,10 @@ public class BookingCTL {
 			bookingUI.displayMessage(notApprovedMessage ); // display above error message
        }
        else {
-              hotel.book(room, guest, arrivalDate, stayLength, occupantNumber, card); // calling book method of hotel class to book the room
+              long confirmationNumber = hotel.book(room, guest, arrivalDate, stayLength, occupantNumber, card); // calling book method of hotel class to book the room
               String description = selectedRoomType.getDescription();  // getting description of room
               bookingUI.displayConfirmedBooking(description, room.getId(), arrivalDate,  stayLength, 
-                        guest.getName(), card.getVendor(), number, cost, booking.getConfirmationNumber); // displaying confirmation message
+                        guest.getName(), card.getVendor(), number, cost, confirmationNumber); // displaying confirmation message
               state = State.COMPLETED; // state set to completed 
               bookingUI.setState(BookingUI.State.COMPLETED); // UI state set to completed 
        }  
