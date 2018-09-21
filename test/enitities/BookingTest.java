@@ -55,6 +55,12 @@ public class BookingTest {
         booking.checkIn();
         assertEquals(true, booking.isCheckedIn());
     }
+	
+	@Test
+    public void testAddServiceCharge() {
+        
+        
+    }
     
 	
     
