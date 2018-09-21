@@ -160,7 +160,7 @@ public class Booking {
 			throw new RuntimeException(msg);
 		)
 		
-		room.checkOut(); // Calls checkOut method of class room
+		room.checkout(this); // Calls checkOut method of class room
 		this.state = State.CHECKED_OUT;  // set state to checkedOut means that room has now pending
 	}
 
