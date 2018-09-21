@@ -104,19 +104,20 @@ public class CheckoutCTL {
 		}
 
        CreditCard card = new CreditCard(type, number, ccv); // creating a new credit card
+	   CreditAuthorizer authorizer = new CreditAuthorizer();
        boolean approved = CreditAuthorizer.authorize(card, cost); // approving card 
        
        if(!approved) { // if card is not approved
             String notApprovedMessage = "\nCredit card not approved, please try again\n"; 
-			bookingUI.displayMessage(notApprovedMessage ); // display above error message
-			Booking booking = new Booking(guest, room, arrivalDate, stayLength, occupantNumber, card); // create new booking
+			checkoutUI.displayMessage(notApprovedMessage ); // display above error message
+			
        }
        else {
               hotel.checkOut(roomId); // call checkout method of hotel
               String msg = "Credit Card has debited";
               checkoutUI.displayMessage(msg); // displaying message
               state = State.COMPLETED; // state set to completed 
-              checkoutUI.setState(checkoutUI.State.COMPLETED); // UI state set to completed 
+              checkoutUI.setState(CheckoutUI.State.COMPLETED); // UI state set to completed 
        }  
 	}
 
