@@ -56,6 +56,10 @@ public class BookingTest {
         assertEquals(true, booking.isCheckedIn());
     }
 	
+	 /**
+     * Test of addServiceCharge method, of class Booking.
+     */
+	
 	@Test
     public void testAddServiceCharge() {System.out.println("addServiceCharge");
         ServiceType serviceType = null;
@@ -65,8 +69,15 @@ public class BookingTest {
                           new CreditCard(CreditCardType.VISA, 5467433, 245));
         booking.checkIn();
         booking.addServiceCharge(serviceType, cost);
-        assertEquals(true, booking.isCheckedIn());
+        assertEquals(true, booking.isCheckedIn());     
         
+    }
+	
+	/**
+     * Test of checkOut method, of class Booking.
+     */
+    @Test
+    public void testCheckOut() {
         
     }
     
