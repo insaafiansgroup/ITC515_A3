@@ -145,7 +145,6 @@ public class BookingCTL {
        CreditCard card = new CreditCard(type, number, ccv); // creating a new credit card
        cost = selectedRoomType.calculateCost(arrivalDate, stayLength); // calculating cost
        boolean approved = CreditAuthorizer.authorize(card, cost); // approving card 
-	   Booking booking = new Booking(guest, room, arrivalDate, stayLength, occupantNumber, card); // create new booking
        
        if(!approved) { // if card is not approved
             String notApprovedMessage = "\nCredit card not approved, please try again\n"; 
