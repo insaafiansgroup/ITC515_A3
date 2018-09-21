@@ -57,7 +57,15 @@ public class BookingTest {
     }
 	
 	@Test
-    public void testAddServiceCharge() {
+    public void testAddServiceCharge() {System.out.println("addServiceCharge");
+        ServiceType serviceType = null;
+        double cost = 0.0;
+        Booking booking = new Booking(new Guest("Waqas Akbar", "2A Tucker St", 042054),
+                          new Room(101, RoomType.SINGLE), new Date(), 1, 1,
+                          new CreditCard(CreditCardType.VISA, 5467433, 245));
+        booking.checkIn();
+        booking.addServiceCharge(serviceType, cost);
+        assertEquals(true, booking.isCheckedIn());
         
         
     }
