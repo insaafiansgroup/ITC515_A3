@@ -138,7 +138,7 @@ public class Booking {
 			throw new RuntimeException(msg); // throws exception 
 		)
 		
-		room.checkIn(); // Calls checkIn method of class room
+		room.checkin(); // Calls checkIn method of class room
 		this.state = State.CHECKED_IN; // set state to checked in means that room has occupied 
 	}
 
