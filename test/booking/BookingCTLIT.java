@@ -48,7 +48,9 @@ public class BookingCTLIT {
     @Test
     public void testCreditDetailsEntered() { // Integration testing done
      
-
+      System.out.println("creditDetailsEntered");
+      BookingCTL controlBooking = new BookingCTL(new Hotel());
+      controlBooking.creditDetailsEntered(CreditCardType.MASTERCARD, 35454333, 235);
         
        
     }
