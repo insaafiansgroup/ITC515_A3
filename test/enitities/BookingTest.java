@@ -48,9 +48,15 @@ public class BookingTest {
      */
     @Test
     public void testCheckIn() {
-       
+        System.out.println("checkIn");
+        Booking booking = new Booking(new Guest("Waqas Akbar", "2A Tucker St", 04205),
+                          new Room(101, RoomType.SINGLE), new Date(), 1, 1,
+                          new CreditCard(CreditCardType.VISA, 54673, 245));
+        booking.checkIn();
+        assertEquals(true, booking.isCheckedIn());
     }
-
+    
+	
     
     
 }
