@@ -44,11 +44,11 @@ public class CheckoutCTLIT {
      */
     @Test
     public void testCreditDetailsEntered() { // Integration Testing
-	    Hotel hotel = new Hotel();
+	   Hotel hotel = new Hotel();
         System.out.println("creditDetailsEntered");
         CreditCardType type = null;
-        int number = 0;
-        int ccv = 0;
+        int number = 12345;
+        int ccv = 345;
         CheckoutCTL instance = new CheckoutCTL(hotel);
         instance.creditDetailsEntered(type, number, ccv);
 	
