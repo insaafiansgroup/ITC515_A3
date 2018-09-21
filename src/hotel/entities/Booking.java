@@ -149,8 +149,8 @@ public class Booking {
 			throw new RuntimeException(msg);
 		)
 		
-		ServiceCharge charges = new ServiceCharge(serviceType, cost); // creates new service charge
-		this.getCharges().add(charges); // add service charge in the charges list
+		ServiceCharge charge = new ServiceCharge(serviceType, cost); // creates new service charge
+		charges.add(charge); // add service charge in the charges list
 	}
 
 
