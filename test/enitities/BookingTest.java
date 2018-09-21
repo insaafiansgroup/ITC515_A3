@@ -64,9 +64,9 @@ public class BookingTest {
     public void testAddServiceCharge() {System.out.println("addServiceCharge");
         ServiceType serviceType = null;
         double cost = 0.0;
-        Booking booking = new Booking(new Guest("Waqas Akbar", "2A Tucker St", 042054),
-                          new Room(101, RoomType.SINGLE), new Date(), 1, 1,
-                          new CreditCard(CreditCardType.VISA, 5467433, 245));
+        Booking booking = new Booking(new Guest("Uzair Mahmood", "2C Tucker St", 047054),
+                          new Room(201, RoomType.DOUBLE), new Date(), 1, 2,
+                          new CreditCard(CreditCardType.MASTERCARD, 5667433, 265));
         booking.checkIn();
         booking.addServiceCharge(serviceType, cost);
         assertEquals(true, booking.isCheckedIn());     
@@ -79,9 +79,9 @@ public class BookingTest {
     @Test
     public void testCheckOut() {
         System.out.println("checkOut");
-        Booking booking = new Booking(new Guest("Waqas Akbar", "2A Tucker St", 042054),
-                          new Room(101, RoomType.SINGLE), new Date(), 1, 1,
-                          new CreditCard(CreditCardType.VISA, 5467433, 245));
+        Booking booking = new Booking(new Guest("Aamir Malik", "15 Auburn St", 040054),
+                          new Room(301, RoomType.TWIN_SHARE), new Date(), 6, 3,
+                          new CreditCard(CreditCardType.VISA, 5460003, 205));
         booking.checkIn();
         booking.checkOut();
         assertEquals(true, booking.isCheckedOut());
