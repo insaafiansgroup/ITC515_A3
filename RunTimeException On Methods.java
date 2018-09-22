@@ -77,19 +77,20 @@ public class TestHotel {
 
 	
 	
-@Test (expected =RuntimeException.class)
-	public void testCheckin() {
-	hotel.checkin(1);
+@Test (expected =RuntimeException.class) // checking for run time exception
+	public void testCheckin() { // declaring method testCheckin()
+	hotel.checkin(1);// passing value to checkin method (confirmationnumber)
 }
 
-@Test (expected =RuntimeException.class)
-public void testAddServiceCharge() {
-hotel.addServiceCharge(101,ServiceType.ROOM_SERVICE,7);
+@Test (expected =RuntimeException.class)// checking for run time exception
+public void testAddServiceCharge() {// declaring method testAddServiceCharge()
+hotel.addServiceCharge(101,ServiceType.ROOM_SERVICE,7);// passing value to addServiceCharge(roomid,servicetype,cost)
 }
 
-@Test (expected =RuntimeException.class)
-public void testCheckout() {
-hotel.checkout(101);
+@Test (expected =RuntimeException.class)// checking for run time exception
+public void testCheckout() {// declaring method testCheckout()
+hotel.checkout(101);// passing value to checkout method (roomId)
+}
 }
 
 
