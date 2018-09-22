@@ -1,0 +1,55 @@
+Test Name	Make Booking
+Use Case Tested:	Make Booking
+Test Description:	When a customer wants to stay at the hotel they book a room so that they can check in when they arrive
+Pre-conditions	The main menu is displayed
+
+Post-conditions	
+•	A new booking is created and subsequent attempts to book that room at those times will fail
+•	The credit card entered is debited by the cost of the booking
+•	The booking can be found by the hotel using the confirmation number
+•	New Guest registered
+•	Subsequent bookings initiated with the registered phone number will find that guest
+•	Booking Cancelled
+•	In all cases where the use case is cancelled, no booking shall be created and no charge against accredit card shall occur
+
+Notes:	
+
+
+Result 
+(Pass/Fail/Warning/Incomplete)	Pass ✓
+
+
+	    TEST STEP	                    EXPECTED TEST RESULTS	P	F
+1.		Enter phone number            Prompt Name	✓	
+2.		Enter name	Prompt Address	✓	
+3.		Enter address	Display guest details and prompt room type.	✓	
+4.		Select room type (Single, Double, Twin share)	Prompt number of guests. 	✓	
+5.		Enter number of occupants 	Prompt arrival date if room will suitable	✓	
+6.		Enter arrival day 	Prompt arrival month	✓	
+7.		Enter arrival month	Prompt arrival year	✓	
+8.		Enter arrival year 	Display arrival date and prompts length of stay	✓	
+9.		Enter length of stay	Display room type description, arrival date, length of stay and cost and Prompt for enter credit card details if room is available	✓	
+10.		Select credit type (Visa, Mastercard)	Prompt credit card number	✓	
+11.		Enter credit card number	Prompt credit card ccv	✓	
+12.		Enter credit card ccv	Display booking details and confirmation number and prompt user to press enter from keyboard to continue.	✓	
+13.		Press “enter” from keyboard 	Display main menu	✓	
+
+
+ 
+
+Test Data Table
+	1	2	3	4	5
+1	0420544866	0426485410	0452764873	0478459296	0420060009
+2	Waqas Akbar	Uzair Mehmood	Aamir Malik	Malik Adnan	Ammar Cheema
+3	2A Tucker St	1A Bruce St	2 Wurruk St	12 Moreland Rd	34 Lygon St
+4	S	D	T	D	T
+5	1	2	3	1	2
+6	03	06	12	18	19
+7	05	12	11	12	6
+8	2018	2019	2018	2020	2021
+9	12	30	1	4	7
+10	V	M	M	V	M
+11	75755	56443	55336	34362	43578
+12	786	986	864	563	664
+
+
